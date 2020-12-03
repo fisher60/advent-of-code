@@ -1,4 +1,4 @@
-with open("3_.txt", "r") as f:
+with open("3_trees.txt", "r") as f:
     inputs = [x.strip("\n") for x in f.readlines()]
 
 if __name__ == "__main__":
