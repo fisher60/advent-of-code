@@ -5,19 +5,13 @@ with open("2_passwords.txt", "r") as f:
 class Data:
     def __init__(self, line):
         self.line = line.split()
+        self.password = self.line[-1]
+        self.char = self.line[1].split(":")[0]
+        self.lengths = self._lengths()
 
-    @property
-    def lengths(self):
+    def _lengths(self):
         length_1, length_2 = map(int, self.line[0].split("-"))
         return range(length_1, length_2 + 1)
-
-    @property
-    def char(self):
-        return self.line[1].split(":")[0]
-
-    @property
-    def password(self):
-        return self.line[-1]
 
     def validate(self):
         if self.password.count(self.char) in self.lengths:
