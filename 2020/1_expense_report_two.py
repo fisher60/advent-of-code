@@ -1,7 +1,7 @@
 from functools import reduce
 from itertools import combinations
 
-with open("expense_report.txt", "r") as f:
+with open("1_expense_report.txt", "r") as f:
     inputs = combinations(map(int, f.read().split()), 3)
 
 
